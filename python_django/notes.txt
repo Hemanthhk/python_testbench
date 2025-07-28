@@ -1,0 +1,40 @@
+#Django notes
+Package needed: Django
+__init__.py - Lets python know that this dir can be treated as a Package
+settings.py - Project settings
+urls.py - Where we shall store url patterns/Different pages of the web application.
+wsgi.py - This acts as a web server Gateway Interface. Brige bw Web server and Python code.
+manage.py - Command utility file.
+
+Create project command from powershell: django-admin startproject first_project
+To start a run server: python manage.py runserver
+Copy and paste the url displayed to browser: http://127.0.0.1:8000/
+To create a Django project: python manage.py startapp first_app
+
+app_files:
+admin.py - Register models
+app.py - Application specific app configurations
+models.py - Applications's data model. Entity relationships.
+tests.py - Test functions to test the code.
+views.py - Functions to handle requests and responses.
+migrations folder - Stores database related information as it relates to the models.
+
+
+Have an app created inside a project,App can perform specific actions.
+Have a seperate urls.py file one for the app and one master urls.py in project (Default), And include app urls.py file in the project urls.py.
+This helps in maintaining modularity of application when we scale the application and keep on adding multiple actions (apps) to the project.
+
+Creating a DB: (models.py)
+Django does the heavy lifting of creating the database tables using the classes defined in models.py
+ 
+Django can do this entire process with a
+simple command:
+python manage.py migrate
+Then register the changes to your app.
+python manage.py makemigrations first_app (first_app is the App name where the model is defined).
+
+Populate Data:
+Populate_<app_name>.py - define a separate script called populate_<app_name>.py 
+Example: populate_first_app.py and populate data from there to the defined DB model.
+
+

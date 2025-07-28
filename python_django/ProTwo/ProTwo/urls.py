@@ -1,5 +1,5 @@
 """
-URL configuration for first_project project.
+URL configuration for ProTwo project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from first_app import views
+from AppTwo import views
 
-
+#Note: All the view.py methods needs to be defined and mapped in the urls.py file if we need it to be displayed as per the page.
 urlpatterns = [
-    path('',views.index,name='index'),
-    path('first_app/',include('first_app.urls')),
+    path('',views.index,name='index'), #URL = http://127.0.0.1:8000/
+    path('help/',include('AppTwo.urls')), #URL = http://127.0.0.1:8000/help
+    # path('help/',views.help,name='help'),
     path('admin/', admin.site.urls),
 ]
