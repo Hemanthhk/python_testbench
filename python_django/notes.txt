@@ -37,4 +37,13 @@ Populate Data:
 Populate_<app_name>.py - define a separate script called populate_<app_name>.py 
 Example: populate_first_app.py and populate data from there to the defined DB model.
 
+Forms
+Create Forms.py to handle user input
+It needs a view to accept and process the form data - Define a method in Views.py consuming required form
+Define Template to render the form and display it to the user
+Use Cross-Site Request Forgery (CSRF) token in html - {% csrf %} token to protect against CSRF attacks.
+Django framework required the csrf token to be present. Else forms might not work!
+Define POST method in view to capture the data received.
+Form validation
+
 
