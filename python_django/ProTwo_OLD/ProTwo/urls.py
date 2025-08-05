@@ -1,7 +1,8 @@
-"""ProTwo URL Configuration
+"""
+URL configuration for ProTwo project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,10 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from appTwo import views
+from django.urls import path
+from django.conf.urls import include
+from AppTwo import views
 
+#Note: All the view.py methods needs to be defined and mapped in the urls.py file if we need it to be displayed as per the page.
 urlpatterns = [
-    path('', include('appTwo.urls')),
+    path('',views.index,name='index'), #URL = http://127.0.0.1:8000/
+    path('help/',include('AppTwo.urls')), #URL = http://127.0.0.1:8000/help
+    # path('help/',views.help,name='help'),
     path('admin/', admin.site.urls),
 ]

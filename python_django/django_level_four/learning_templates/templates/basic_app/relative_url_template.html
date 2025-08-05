@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>relative_url_page</title>
+  </head>
+  <body>
+    <h1>Welcome to relative_url_page! Template tagging is used here</h1>
+    <a href="{% url 'basic_app:other' %}">The other page</a> <!--Needs to match app_name of urls.py in basic_app, Its not from the folder name, Its from app_name in urls.py-->
+    <a href = "{%url 'admin:index' %}">Link to Admin</a>
+    <a href = "{%url 'index' %}">Link to index</a>
+
+  </body>
+</html>
